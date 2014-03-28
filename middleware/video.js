@@ -48,7 +48,10 @@ module.exports = {
         pg.connect(process.env.VIDDLET_DATABASE_URL, function (err, client, done) {
             client.query('INSERT INTO videos(uuid, ip, date) VALUES($1, $2, $3) RETURNING id, slug', video_array, function (err, result) {
                 done();
-                if (err) next(err);
+                if (err) {
+                    console.log(err);
+                    res.status(500).send('db error');
+                }
                 video.id = result.rows[0].id;
                 video.slug = result.rows[0].slug;
 
