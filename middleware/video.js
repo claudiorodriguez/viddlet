@@ -18,7 +18,7 @@ module.exports = {
                 res.locals.video = JSON.parse(value);
                 next();
             } else {
-                pg.connect(process.env.HEROKU_POSTGRESQL_TEAL_URL, function (err, client, done) {
+                pg.connect(process.env.VIDDLET_DATABASE_URL, function (err, client, done) {
                     client.query('SELECT v.* FROM videos v WHERE v.slug = $1', [req.params.slug], function (err, result) {
                         done();
                         if (err) return console.error(err);
@@ -45,7 +45,7 @@ module.exports = {
         };
         var video_array = [req.body.uuid, req._remoteAddress, video.date];
 
-        pg.connect(process.env.HEROKU_POSTGRESQL_TEAL_URL, function (err, client, done) {
+        pg.connect(process.env.VIDDLET_DATABASE_URL, function (err, client, done) {
             client.query('INSERT INTO videos(uuid, ip, date) VALUES($1, $2, $3) RETURNING id, slug', video_array, function (err, result) {
                 done();
                 if (err) next(err);

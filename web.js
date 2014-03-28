@@ -47,8 +47,7 @@ app.use('/public', express.static(__dirname + '/public'));
 
 app.get('/robots.txt', function(req, res){
     res.send(
-        "User-agent: *\n" +
-        "Disallow: /"
+        "Sitemap: " + app.locals.absolute_url + "/sitemap.xml"
     );
 });
 
