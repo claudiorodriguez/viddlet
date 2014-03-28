@@ -13,6 +13,7 @@ var videos = require('./middleware/video.js');
 app.locals.pubnub_key = process.env.PUBNUB_SUBSCRIBE_KEY;
 app.locals.pubnub_channel = process.env.PUBNUB_CHANNEL;
 app.locals.absolute_url = process.env.ABSOLUTE_URL;
+app.locals.cameratag_appid = process.env.CAMERATAG_APPID;
 
 app.set('view engine', 'html');
 app.set('views', __dirname + '/views');
