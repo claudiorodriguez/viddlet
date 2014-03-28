@@ -204,6 +204,14 @@ body {
     left: 6em;
     top: 3em;
 }
+#viddlet .cameratag_placeholder {
+    width: 480px !important;
+    height: 270px !important;
+    margin: auto;
+}
+#viddlet .cameratag_player_error {
+    font-size: 2em;
+}
 
 /* Keyframes */
 
