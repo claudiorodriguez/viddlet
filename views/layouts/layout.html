@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>viddlet - {{ title }}</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="keywords" content="videos,share,short,viddlet{{#keywords}},{{keywords}}{{/keywords}}"/>
+        <meta name="description" content="{{#description}}{{description}}{{/description}}{{^description}}Record and share short videos with anyone you want!{{/description}}"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="shortcut icon" href="/public/favicon.ico"/>
+        <link rel="stylesheet" type="text/css" href="/public/css/styles.css" />
+        <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+        <script src='/public/js/cameratag.js' type='text/javascript'></script>
+	</head>
+	<body>
+		{{{yield}}}
+
+        <script type="text/javascript" src="http://twitter.github.com/hogan.js/builds/2.0.0/hogan-2.0.0.js"></script>
+        <script type="text/javascript" src="/templates.js"></script>
+		<script type="text/javascript">
+			$(function(){
+
+                $(document).on('click', '#share-link', function(e) {
+                    $(this).select();
+                });
+
+                CameraTag.observe('camera', 'published', function(){
+                    var uuid = CameraTag.cameras.camera.getVideo().uuid;
+
+                    var state = $('<section>').attr('id','process-state');
+                    state.html(templates.state_processing());
+                    $('#recorder').after(state);
+                    $('#recorder').hide().remove();
+
+                    var data = {uuid: uuid};
+                    $.ajax({
+                        type: "POST",
+                        dataType: "json",
+                        url: '/video/create',
+                        data: data,
+                        success: function(data)
+                        {
+                            if (data.slug) {
+                                $('#process-state').after(templates.share({slug: data.slug, absolute_url: "{{absolute_url}}"}));
+                            }
+                        }
+                    });
+                });
+
+                CameraTag.observe('camera', 'processed', function(){
+                    $('#process-state').html(templates.state_processed());
+                });
+
+            });
+		</script>
+	</body>
+</html>
