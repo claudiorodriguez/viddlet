@@ -11,27 +11,7 @@
     <script src='/public/js/cameratag.js' type='text/javascript'></script>
 
     {{#video}}
-    <meta property="og:image" content="https://cameratag.com/videos/{{uuid}}/360p/thumb"/>
-    <meta property="og:url" content="{{absolute_url}}/{{slug}}"/>
-    <meta property="og:title" content="viddlet - {{ title }}"/>
-    <meta property="og:description" content="{{#description}}{{description}}{{/description}}{{^description}}A short video someone wanted to share with the world{{/description}}"/>
-    <meta property="og:site_name" content="Viddlet"/>
-    <meta property="og:type" content="video.other"/>
-    <meta property="og:video" content="http://cameratag.com/videos/{{uuid}}/360p-16x9/mp4" />
-    <meta property="og:video:width" content="640" />
-    <meta property="og:video:height" content="360" />
-    <meta property="og:video:type" content="video/mp4" />
-
-    <meta name="twitter:card" content="player">
-    <meta name="twitter:site" content="@viddlet">
-    <meta name="twitter:title" content="Viddlet - {{slug}}">
-    <meta name="twitter:description" content="{{#description}}{{description}}{{/description}}{{^description}}A short video someone wanted to share with the world{{/description}}">
-    <meta name="twitter:image" content="http://cameratag.com/videos/{{uuid}}/360p/thumb">
-    <meta name="twitter:player" content="{{absolute_url}}/embed/{{slug}}">
-    <meta name="twitter:player:width" content="640">
-    <meta name="twitter:player:height" content="360">
-    <meta name="twitter:player:stream" content="http://cameratag.com/videos/{{uuid}}/360p-16x9/mp4">
-    <meta name="twitter:player:stream:content_type" content="video/mp4">
+        {{>socialmeta}}
     {{/video}}
     <style type="text/css">
         body {
