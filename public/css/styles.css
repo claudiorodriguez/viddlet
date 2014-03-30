@@ -37,11 +37,11 @@ body {
 
 #brief {
     margin-bottom: 2em;
-    padding: 0 3em;
+    padding: 0 1em;
 }
 
 #brief p {
-    font-size: 2em;
+    font-size: 1.5em;
     margin: 0;
     text-align: center;
 }
