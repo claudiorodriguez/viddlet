@@ -210,14 +210,23 @@ body {
     margin: auto;
 }
 #viddlet .vjs-default-skin .vjs-big-play-button {
-    left: 3.5em;
-    top: 2.75em;
+    left: 3em;
+    top: 1.75em;
 }
 #viddlet .cameratag_placeholder {
     margin: auto;
 }
 #viddlet .cameratag_player_error {
     font-size: 2em;
+}
+
+#footer {
+    text-align: center;
+    margin-top: 2em;
+}
+#footer a {
+    color: #f38630;
+    text-decoration: none;
 }
 
 /* Keyframes */
