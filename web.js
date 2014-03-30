@@ -64,6 +64,8 @@ app.get('/favicon.ico', function(req,res) {
 
 app.post('/video/create', videos.create);
 
+app.get('/embed/:slug', videos.bySlug, videos.embed);
+
 app.get('/:slug', videos.bySlug, videos.show);
 
 // Listen on port

@@ -655,21 +655,21 @@ CameraTag = new function() {
       if (start_screen.length == 0) {
         start_screen = $('<div id="'+dom_id+'_start_screen" style="font-size:'+font_size+'px" class="cameratag_screen cameratag_start"></div>');
         
-        var selection_prompt = $('<a class="cameratag_select_prompt">choose a method below to submit your video</a>');
+        var selection_prompt = $('<a class="cameratag_select_prompt">choose how to submit your video</a>');
         start_screen.append(selection_prompt);
 
         if (sources.indexOf("record") != -1 && !mobile_enabled) {
-          var record_btn = $('<a class="cameratag_primary_link cameratag_record_link cameratag_record"><span class="cameratag_action_icon">&#61501;</span><br><span class="cameratag_prompt_label">record from webcam</span></a>');
+          var record_btn = $('<a class="cameratag_primary_link cameratag_record_link cameratag_record"><span class="cameratag_action_icon">&#61501;</span><br><span class="cameratag_prompt_label">webcam</span></a>');
           start_screen.append(record_btn);
         }
         
         if (sources.indexOf("upload") != -1 && !mobile_enabled) {
-          var upload_btn = $('<a id="'+dom_id+'_upload_link" class="cameratag_primary_link cameratag_upload_link cameratag_upload"><span class="cameratag_action_icon">&#61678;</span><br><span class="cameratag_prompt_label">upload a file</span></a>');
+          var upload_btn = $('<a id="'+dom_id+'_upload_link" class="cameratag_primary_link cameratag_upload_link cameratag_upload"><span class="cameratag_action_icon">&#61678;</span><br><span class="cameratag_prompt_label">file</span></a>');
           start_screen.append(upload_btn);
         } 
 
         if (sources.indexOf("sms") != -1 || mobile_enabled) {
-          var sms_btn = $('<a class="cameratag_primary_link cameratag_sms_link"><span class="cameratag_action_icon">&#61707;</span><br><span class="cameratag_prompt_label">record from phone</span></a>');
+          var sms_btn = $('<a class="cameratag_primary_link cameratag_sms_link"><span class="cameratag_action_icon">&#61707;</span><br><span class="cameratag_prompt_label">phone</span></a>');
           start_screen.append(sms_btn);
         }
 

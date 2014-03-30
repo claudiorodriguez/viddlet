@@ -11,6 +11,7 @@ body {
     margin: 0;
     color: #333;
     background: #a7dbd8;
+    padding-bottom: 2em;
 }
 
 #header {
@@ -40,7 +41,7 @@ body {
 }
 
 #brief p {
-    font-size: 3em;
+    font-size: 2em;
     margin: 0;
     text-align: center;
 }
@@ -53,7 +54,7 @@ body {
     color: #333;
     border: none;
     margin: auto;
-    width: 12em;
+    width: 10em;
     font-size: 2em;
     padding: 0.2em 0.4em;
     border-radius: 0.5em;
@@ -115,6 +116,16 @@ body {
 
 #recorder #camera .cameratag_prompt_label {
     position: initial;
+    color: #333;
+}
+
+#recorder .camera_tag .cameratag_screen .cameratag_prompt {
+    color: #333;
+    background: none;
+    font-size: 2em;
+}
+
+#recorder .camera_tag .cameratag_screen.cameratag_upload .cameratag_upload_status {
     color: #333;
 }
 
@@ -196,17 +207,13 @@ body {
     text-align: center;
 }
 #viddlet #player {
-    width: 480px !important;
-    height: 270px !important;
     margin: auto;
 }
 #viddlet .vjs-default-skin .vjs-big-play-button {
-    left: 6em;
-    top: 3em;
+    left: 3.5em;
+    top: 2.75em;
 }
 #viddlet .cameratag_placeholder {
-    width: 480px !important;
-    height: 270px !important;
     margin: auto;
 }
 #viddlet .cameratag_player_error {

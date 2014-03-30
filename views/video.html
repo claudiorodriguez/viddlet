@@ -1,8 +1,14 @@
 {{>header}}
 
-<section id="viddlet">
-    <video id='player' data-uuid='{{video.uuid}}'></video>
-</section>
+{{#video}}
+    <section id="viddlet">
+        <video id='player' data-uuid='{{uuid}}'></video>
+    </section>
+
+    <p class="state">Share this video...</p>
+
+    {{>share}}
+{{/video}}
 
 <p class="state">Want to record your own?</p>
 

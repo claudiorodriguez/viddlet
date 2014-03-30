@@ -3,12 +3,17 @@ var redis = require('redis-url').connect(process.env.REDISCLOUD_URL);
 
 module.exports = {
     show: function(req, res) {
-        //var cfpartial;
-        //if (req.user) cfpartial = 'partials/commentform';
-        //else cfpartial = 'partials/socialconnect';
-        //if (res.locals.maxid && res.locals.video.minid && (res.locals.video.minid < res.locals.maxid)) res.locals.morecomments = true;
         res.render('video', {
-            title: res.locals.video.slug
+            title: res.locals.video.slug,
+            description: 'A short video someone wanted to share with the world',
+            partials: {share: 'partials/share'}
+        });
+    },
+    embed: function(req,res) {
+        res.render('embed', {
+            title: res.locals.video.slug,
+            description: 'A short video someone wanted to share with the world',
+            layout: 'layouts/embed.html'
         });
     },
     bySlug: function (req, res, next) {
