@@ -19,7 +19,7 @@ app.locals.cameratag_appid = process.env.CAMERATAG_APPID;
 app.set('view engine', 'html');
 app.set('views', __dirname + '/views');
 app.set('layout', 'layouts/layout');
-app.set('partials', {header: 'partials/header', record_button: 'partials/record_button', socialmeta: 'partials/socialmeta', footer: 'partials/footer'});
+app.set('partials', {header: 'partials/header', record_button: 'partials/record_button', socialmeta: 'partials/socialmeta', footer: 'partials/footer', chartbeat: 'partials/chartbeat'});
 app.enable('view cache');
 app.engine('html', require('hogan-express'));
 
