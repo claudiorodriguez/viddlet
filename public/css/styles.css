@@ -68,16 +68,17 @@ body {
 }
 #share .social a {
     text-decoration: none;
+    margin: 0 0.25em;
 }
 #share .social a:first-of-type {
-    margin-right: 1em;
+    margin-left: 0;
 }
 #share .social a:last-of-type {
-    margin-left: 1em;
+    margin-right: 0;
 }
 #share .social a img {
-    width: 64px;
-    height: 64px;
+    width: 60px;
+    height: 60px;
 }
 
 #record-action .record {
