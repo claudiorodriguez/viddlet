@@ -32,11 +32,19 @@ var HoganTemplateCompiler = require('hogan-template-compiler'),
     });
 
 app.get('/', function(request, response) {
-	response.render('home', {title: 'Home'});
+    if (process.env.RECORD_ENABLED == "TRUE") {
+        response.render('home', {title: 'Home'});
+    } else {
+        response.render('record_disabled');
+    }
 });
 
 app.get('/record', function(request, response) {
-    response.render('record', {title: 'Record', partials: {camera: 'partials/camera'}});
+    if (process.env.RECORD_ENABLED == "TRUE") {
+        response.render('record', {title: 'Record', partials: {camera: 'partials/camera'}});
+    } else {
+        response.render('record_disabled');
+    }
 });
 
 app.get("/templates.js",  function(req, res) {
